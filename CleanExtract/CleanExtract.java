@@ -5,15 +5,28 @@ public class CleanExtract {
         for (int i=0; i< part.length ; i++ ){
             int a=part[i].indexOf(".");
             int b=part[i].lastIndexOf(".");
-            if (a != -1 && b != -1 && a < b) {
-                String res=part[i].substring(a+1,b).trim();
+
+            String res;
+
+            if (a != -1) {
+
+                if (a == b) {
+                    res = part[i].substring(a + 1).trim();
+                } else {
+                    res = part[i].substring(a + 1, b).trim();
+                }
+
+            } else {
+                res = part[i].trim();
+            }
+
                 if (!res.isEmpty()){
                     if (!result.isEmpty()){
                         result+=" ";
                     }
                     result+=res;
                 }
-            }
+            
         }
         return result;
     }
