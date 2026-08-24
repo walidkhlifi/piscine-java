@@ -11,8 +11,10 @@ public class Capitalize {
         String[] arr=text.split("\\s+");
 
         for (int i =0; i<arr.length; i++){
-            arr[i] = Character.toUpperCase(arr[i].charAt(0))  + arr[i].substring(1);
+            // arr[i] = Character.toUpperCase(arr[i].charAt(0))  + arr[i].substring(1).toLowerCase();
+            arr[i] = Character.toUpperCase(arr[i].charAt(0))+ arr[i].substring(1).toLowerCase();
         }
+
         String res=String.join(" ",arr);
         file.write(res.getBytes());
         reader.close();
