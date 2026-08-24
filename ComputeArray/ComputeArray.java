@@ -13,8 +13,12 @@ public class ComputeArray{
                 index++;
                 continue;
             }
+            if ((i-2)%3==0){
+
                 res[index]=(i);
                 index++;
+                continue;
+            }
 
         }
         return res;
