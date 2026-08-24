@@ -1,8 +1,8 @@
 public class ComputeArray {
 
     public static int[] computeArray(int[] array) {
-        if array==null{
-            return null
+        if (array==null){
+            return null;
         }
         int[] res = new int[array.length];
         int index = 0;
