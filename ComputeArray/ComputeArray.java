@@ -9,7 +9,7 @@ public class ComputeArray {
 
             if (i % 3 == 0) {
                 res[index] = i * 5;
-            } else if ((i - 1) % 3 == 0) {
+            } else if (i % 3 == 1) {
                 res[index] = i + 7;
             } else {
                 res[index] = i;
