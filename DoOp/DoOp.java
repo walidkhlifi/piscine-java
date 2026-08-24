@@ -3,7 +3,7 @@ public class DoOp {
         if (args == null) {
             return "Error";
         }
-        if (args.length<3){
+        if (args.length!=3){
             return "Error";
         }
         int a=Integer.parseInt(args[0]);
