@@ -5,10 +5,10 @@ public class Cat {
         if (args.length == 0) {
             return;
         }
-        BufferedReader reader=new BufferedReader(new FileReader(args[0]));
+        FileInputStream reader=new FileInputStream(args[0]);
         int c;
         while((c=reader.read())!=-1){
-            System.out.print((char) c);
+            System.out.write(c);
         }
         reader.close();
     }
