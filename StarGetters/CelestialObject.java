@@ -20,27 +20,30 @@ public class CelestialObject{
     public double getX(){
         return this.x;
     }
-    public double getY(){
-        return this.y;
-    }
-    public double getZ(){
-        return this.z;
-    }
-    public String getName(){
-        return this.name;
-    }
-    ///////
     public void setX(double ex){
         this.x=ex;
+    }
+
+    public double getY(){
+        return this.y;
     }
     public void setY(double ey){
         this.x=ey;
     }
+
+    public double getZ(){
+        return this.z;
+    }
     public void setZ(double ez){
         this.x=ez;
+    }
+
+    public String getName(){
+        return this.name;
     }
     public void setName(String ename){
         this.name=ename;
     }
+
     
 }
