@@ -20,7 +20,7 @@ public class CelestialObject{
         this.name=s;
         this.mass=mass;
     }
-    public int getmass(){
+    public int getMass(){
         return this.mass;
     }
     public void setmass(Integer ss){

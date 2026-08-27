@@ -21,11 +21,11 @@ public class Galaxy{
         for (CelestialObject object : celestialObjects) {
 
             if (object instanceof Star) {
-                result.put("Star",   result.get("Star") + object.getmass());
+                result.put("Star",   result.get("Star") + object.getMass());
             } else if (object instanceof Planet) {
-                result.put("Planet",   result.get("Planet") + object.getmass());
+                result.put("Planet",   result.get("Planet") + object.getMass());
             } else {
-                result.put("Other",     result.get("Other") + object.getmass());
+                result.put("Other",     result.get("Other") + object.getMass());
             }
         }
 
