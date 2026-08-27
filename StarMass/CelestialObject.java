@@ -1,5 +1,7 @@
 public class CelestialObject{
-    public Integer mass;
+
+    private int mass;
+    
     public double x;
     public double y;
     public double z;
@@ -11,14 +13,14 @@ public class CelestialObject{
         this.z=0.0;
         this.name="Soleil";
     }
-    public CelestialObject(String s,double x,double y,double z, Integer mass){
+    public CelestialObject(String s,double x,double y,double z, int mass){
         this.x=x;
         this.y=y;
         this.z=z;
         this.name=s;
         this.mass=mass;
     }
-    public Integer getmass(){
+    public int getmass(){
         return this.mass;
     }
     public void setmass(Integer ss){

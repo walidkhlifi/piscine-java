@@ -4,7 +4,7 @@ public class Planet extends CelestialObject{
         super();
         centerStar=new Star();
     }
-    public Planet(String name, double x, double y, double z , Star centerStar, Integer m){
+    public Planet(String name, double x, double y, double z , Star centerStar, int m){
         super( name,  x,  y,  z , m );
         this.centerStar=centerStar;
     }
