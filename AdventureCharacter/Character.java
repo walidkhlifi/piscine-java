@@ -8,9 +8,7 @@ public class Character{
     public int getCurrentHealth(){
         return this.currentHealth;
     }
-    // public void setCurrentHealth(int x){
-    //     this.currentHealth=x;
-    // }
+
     public String getName(){
         return this.name;
     }
@@ -27,7 +25,7 @@ public class Character{
         }
         return String.format("%s : %d/%d",this.name, this.currentHealth , this.maxHealth);
     }
-    public void takeDamage(Integer x){
+    public void takeDamage(int x){
       int res=  this.currentHealth-x;
       if (res<0){
         this.currentHealth=0;
