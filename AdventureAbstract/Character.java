@@ -71,7 +71,7 @@ public abstract class Character{
         }
         return x;
     }
-    public void setCurrentHealth(int health){
+    protected void setCurrentHealth(int health){
         int res=this.getCurrentHealth()+health;
         if (res > this.getMaxHealth()) {
             this.currentHealth = this.getMaxHealth();
