@@ -1,0 +1,96 @@
+import java.util.*;
+public abstract class Character{
+    private static List<Character> allCharacters=new ArrayList<>();
+    private final int maxHealth;
+    private int  currentHealth;
+    private final String name;
+    private final Weapon weapon;
+
+    public int getMaxHealth(){
+        return this.maxHealth;
+    }
+    public int getCurrentHealth(){
+        return this.currentHealth;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+    public Weapon getWeapon(){
+        return this.weapon;
+    }
+
+    public  Character(String name, int maxHealth , Weapon weapon){
+        this.maxHealth=maxHealth;
+        this.currentHealth=maxHealth;
+        this.name=name;
+        this.weapon=weapon;
+        allCharacters.add(this);
+    }
+    @Override
+    public String toString(){
+        if (this.currentHealth==0){
+            return String.format("%s : KO",this.name);
+        }
+        return String.format("%s : %d/%d",this.name, this.currentHealth , this.maxHealth);
+    }
+    // public void takeDamage(int x){
+    //   int res=  this.currentHealth-x;
+    //   if (res<0){
+    //     this.currentHealth=0;
+    //   }else{
+    //     this.currentHealth=res;
+    //   }
+    // }
+    public abstract void takeDamage(int x) throws DeadCharacterException;
+    // public void attack(Character adv){
+    //     adv.takeDamage(9);
+    // }
+    public abstract void attack(Character adv) throws DeadCharacterException;
+
+    public static String printStatus(){
+        if (allCharacters.isEmpty()){
+            return "------------------------------------------\nNobody's fighting right now !\n------------------------------------------\n";
+        }else{
+            String res="------------------------------------------\nCharacters currently fighting :";
+            for(Character x : allCharacters){
+           res+= String.format("\n - %s", x.toString());
+            }
+            res+="\n------------------------------------------\n";
+        return res;
+        }
+    }
+    public static Character fight(Character x , Character y){
+        try{
+        while(x.currentHealth>0 && y.currentHealth>0){
+            x.attack(y);
+            if (y.currentHealth<=0){
+                return x;
+            }
+            y.attack(x);
+            if (x.currentHealth<=0){
+                return y;
+            }
+        }
+          
+        }catch(Exception e){
+
+        }
+        if (y.currentHealth> x.currentHealth){
+        return y;
+        }
+        return x;
+    }
+    protected void setCurrentHealth(int health){
+        int res=this.getCurrentHealth()+health;
+        if (res > this.getMaxHealth()) {
+            this.currentHealth = this.getMaxHealth();
+        } else if (res < 0) {
+            this.currentHealth = 0;
+        } else {
+            this.currentHealth = res;
+        }
+    }
+
+
+}
