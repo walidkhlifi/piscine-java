@@ -31,11 +31,10 @@ public class ParseDate {
         return null;
     }
     String[] parts = stringDate.split(" ");
-    int hour;
-    if (parts[1].contains("evening")){
-        hour = Integer.parseInt(parts[0]) + 12;
-    }else{
-        hour = Integer.parseInt(parts[0]);
+    int hour = Integer.parseInt(parts[0]);
+
+    if (parts[4].contains("evening")) {
+        hour += 12;
     }
     int minute = Integer.parseInt(parts[5]);
     int second = Integer.parseInt(parts[8]);
