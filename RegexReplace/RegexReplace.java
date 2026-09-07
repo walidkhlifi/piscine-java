@@ -11,8 +11,20 @@ public class RegexReplace {
         String domain = parts[1];
 
         if (username.matches(".*[-._].*")) {
-            username = username.replaceAll("(?<=[-._]).", "*");
-        } else if (username.length() > 3) {
+            int index = -1;
+
+            for (int i = 0; i < username.length(); i++) {
+                char c = username.charAt(i);
+
+                if (c == '.' || c == '-' || c == '_') {
+                    index = i;
+                    break;
+                }
+            }
+
+            username = username.substring(0, index + 1)
+                    + "*".repeat(username.length() - index - 1);
+        }else if (username.length() > 3) {
             username = username.substring(0, 3)  + "*".repeat(username.length() - 3);
         }
 
