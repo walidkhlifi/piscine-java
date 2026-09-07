@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Locale;
+import java.time.format.DateTimeFormatter;
 
 public class FormatDate {
 
@@ -9,21 +10,21 @@ public class FormatDate {
         if (dateTime==null){
             return null;
         }
-        DateTimeFormatter f = DateTimeFormatter.ofPattern("'Le' dd MMM 'de l'an' yyyy 'à' HH'h'mm'm' 'et' ss's'",Locale.FRANCE);
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("'Le' dd MMM 'de l''an' yyyy 'à' HH'h'mm'm' 'et' ss's'",Locale.FRENCH);
         return dateTime.format(f);
     }
 
     public static String formatSimple(LocalDate date) {
-        if (dateTime==null){
+        if (date==null){
             return null;
         }
-        DateTimeFormatter f= DateTimeFormatter.ofPattern("MMMM dd yy" , Locale.ITALIC);
+        DateTimeFormatter f= DateTimeFormatter.ofPattern("MMMM dd yy" , Locale.ITALIAN);
          return date.format(f);
 
     }
 
     public static String formatIso(LocalTime time) {
-        if (dateTime==null){
+        if (time==null){
             return null;
         }
         return time.toString();
